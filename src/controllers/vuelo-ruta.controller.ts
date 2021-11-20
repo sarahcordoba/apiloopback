@@ -1,17 +1,18 @@
+import {authenticate} from '@loopback/authentication';
 import {
-  repository,
+  repository
 } from '@loopback/repository';
 import {
-  param,
   get,
-  getModelSchemaRef,
+  getModelSchemaRef, param
 } from '@loopback/rest';
 import {
-  Vuelo,
-  Ruta,
+  Ruta, Vuelo
 } from '../models';
 import {VueloRepository} from '../repositories';
 
+
+@authenticate("admin")
 export class VueloRutaController {
   constructor(
     @repository(VueloRepository)
