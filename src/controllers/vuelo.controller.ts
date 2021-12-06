@@ -21,7 +21,7 @@ export class VueloController {
     @repository(VueloRepository)
     public vueloRepository: VueloRepository,
   ) { }
-
+  @authenticate.skip() // servicio web que no requiere token
   @post('/vuelos')
   @response(200, {
     description: 'Vuelo model instance',
